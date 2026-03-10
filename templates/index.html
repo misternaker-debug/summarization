@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Суммаризация текста</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Суммаризация текста</h1>
+        <form method="post">
+            <textarea name="input_text" rows="10" cols="80" placeholder="Введите текст для суммаризации...">{{ original_text }}</textarea>
+            <br>
+            <button type="submit">Суммаризировать</button>
+        </form>
+        {% if summary %}
+        <h2>Результат:</h2>
+        <div class="result">
+            <p>{{ summary }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
